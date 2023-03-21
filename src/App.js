@@ -12,7 +12,7 @@ const FilterBy = () => {
       </select>
       </div>
     </>
-);
+  );
 };
 const SortBy = () => {
   return (
@@ -26,8 +26,19 @@ const SortBy = () => {
           </select>
         </div>
     </>
+  );
+};
+const Product = () => {
+  return (
+    <li className="product-grid-item">
+          <img src={products[0].images[0]} alt={products[0].name} />
+          <h3>{products[0].name}</h3>
+          <p>{products[0].description}</p>
+          <button>Buy now</button>
+        </li>
   )
-  }
+}
+
 const App = () => {
   return (
     <div className="container">
@@ -37,6 +48,7 @@ const App = () => {
         <SortBy />
       </div>
       <ul className="product-grid">
+        <Product />
         <li className="product-grid-item">
           <img src={products[0].images[0]} alt={products[0].name} />
           <h3>{products[0].name}</h3>
