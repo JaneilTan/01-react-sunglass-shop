@@ -1,20 +1,23 @@
 import "./App.css";
 import products from "./api/products.json";
-
-const App = () => {
+const FilterBy = () => {
   return (
-    <div className="container">
-      <h1>Sunglass Shop</h1>
-      <div className="toolbar">
-        <div className="filterBy">
-          <label htmlFor="category">Filter by</label>
-          <select id="category" defaultValue="all">
-            <option value="all">All</option>
-            <option value="accessories">Accessories</option>
-            <option value="sunglasses">Sunglasses</option>
-          </select>
-        </div>
-        <div className="sortBy">
+    <>
+      <div className="filterBy">
+      <label htmlFor="category">Filter by</label>
+      <select id="category" defaultValue="all">
+        <option value="all">All</option>
+        <option value="accessories">Accessories</option>
+        <option value="sunglasses">Sunglasses</option>
+      </select>
+      </div>
+    </>
+);
+};
+const SortBy = () => {
+  return (
+    <>
+      <div className="sortBy">
           <label htmlFor="sort">Sort by</label>
           <select id="sort" defaultValue="latest">
             <option value="latest">Latest</option>
@@ -22,6 +25,16 @@ const App = () => {
             <option value="high">Price: High</option>
           </select>
         </div>
+    </>
+  )
+  }
+const App = () => {
+  return (
+    <div className="container">
+      <h1>Sunglass Shop</h1>
+      <div className="toolbar">
+        <FilterBy />
+        <SortBy />
       </div>
       <ul className="product-grid">
         <li className="product-grid-item">
